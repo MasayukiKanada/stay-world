@@ -30,29 +30,44 @@
 <body id="overlay">
 	<!---global container---->
 	<div id="global-container">
-		<header>
-			<nav class="navbar">
-				<div class="navbar__inner">
+		<!---container---->
+		<div id="container">
+			<div class="mobile-menu__cover"></div>
+			<div class="nav-trigger"></div>
+			<header class="header">
+				<div class="header__inner">
 					<div class="logo">
 						<h1 class="logo__item">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<?php /* bloginfo( 'name' ); */ ?>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="SiMPLE" class="logo__img"><span class="purple">Stay</span>World
+								<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="SiMPLE" class="logo__img"><span>Stay</span><span class="purple">World</span>
 							</a>
 						</h1>
 					</div>
+					<nav class="navbar">
 
-					<?php
-						$args = array(
-							'menu_class' => 'nav navbar-nav',
-							'container' => false,
-						);
-						wp_nav_menu($args);
-					?>
+							<?php
+								$args = array(
+									'theme_location' => 'global_nav',
+									'menu_class' => 'navbar__inner',
+									'container' => false,
+									'items_wrap' => '<ul class="navbar__ul">%3$s</ul>',
+								);
+								wp_nav_menu($args);
+							?>
 
-					<!---メニューテンプレートから追加--->
-					<?php /* include("navigation.php"); */ ?>
+							<!---メニューテンプレートから追加--->
+							<?php /* include("navigation.php"); */ ?>
 
+							<div class="navbar__btn">
+								<button class="btn filled">Contact</button>
+							</div>
+					</nav>
+					<button class="mobile-menu__btn">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
 				</div>
-			</nav>
-		</header>
+
+			</header>

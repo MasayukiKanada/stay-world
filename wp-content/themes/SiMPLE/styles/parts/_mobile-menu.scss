@@ -9,10 +9,21 @@ $cMenuOpen: $cBlack;
   right: 0;
   top: 60px;
   width: 300px;
+  z-index: -10;
 
   & .logo {
+    opacity: 0;
     padding: 0 40px;
     font-size: 38px;
+    transition: opacity 0.3s;
+
+    &__item {
+      display: flex;
+
+      & > img {
+        width: 0.6em;
+      }
+    }
   }
 
   &__btn {
@@ -72,6 +83,10 @@ $cMenuOpen: $cBlack;
   & #container {
     transform: translate(-300px, 60px);
     box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+
+  & .logo {
+    opacity: 1;
   }
 
   & .mobile-menu {
