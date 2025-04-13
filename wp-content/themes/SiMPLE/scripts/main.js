@@ -12,3 +12,6 @@ const cb = function (el, inview) {
 }
 
 const so = new ScrollObserver('.nav-trigger', cb , {once: false});
+
+const hero = new HeroSlider('.swiper');
+hero.start();
