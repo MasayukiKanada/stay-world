@@ -95,6 +95,43 @@ get_header(); ?>
                 </div>
             </div>
         </section>
+        <section class="popular">
+            <div class="popular__inner">
+                <div class="popular__header">
+                    <h2 class="popular__title main-title tween-animate-title">Popular Place</h2>
+                    <div class="popular__sub-title sub-title tween-animate-title">人気の観光地で宿泊先を見つけましょう</div>
+                </div>
+                <div class="popular__items">
+                    <div class="popular__item">
+                        <div class="popular__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/image-p1.jpg" alt="パリ">
+                        </div>
+                        <p class="popular__name">パリ</p>
+                    </div>
+                    <div class="popular__item">
+                        <div class="popular__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/image-p2.jpg" alt="ニューヨーク">
+                        </div>
+                        <p class="popular__name">ニューヨーク</p>
+                    </div>
+                    <div class="popular__item">
+                        <div class="popular__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/image-p3.jpg" alt="香港">
+                        </div>
+                        <p class="popular__name">香港</p>
+                    </div>
+                    <div class="popular__item">
+                        <div class="popular__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/image-p4.jpg" alt="パリ">
+                        </div>
+                        <p class="popular__name">大阪</p>
+                    </div>
+                </div>
+                <div class="popular__btn">
+                    <a href="#" class="btn cover-3d"><span>一覧から探す</span></a>
+                </div>
+            </div>
+        </section>
     </div>
 
 <?php get_footer(); ?>
