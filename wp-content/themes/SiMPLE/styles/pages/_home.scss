@@ -134,7 +134,36 @@
     width: 47%;
   }
 
-  &__txt {
-    margin-top: 20px;
+}
+
+.house {
+  @extend .mb-lg;
+
+  &__inner {
+    @extend .content-width;
+  }
+
+  &__items {
+    @extend .flex;
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include mq(md) {
+      width: 50%;
+      margin-bottom: 50px
+    }
+  }
+
+  &__name {
+    @extend .font-lr;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

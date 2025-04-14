@@ -5,7 +5,7 @@
 get_header(); ?>
 
     <div id="main">
-        <div class="hero">
+        <section class="hero">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -26,8 +26,8 @@ get_header(); ?>
                     <span class="hero__scrolltext">scroll</span>
                 </div>
             </div>
-        </div>
-        <div class="travel">
+        </section>
+        <section class="travel">
             <div class="travel__inner">
                 <div class="travel__item">
                     <div class="travel__img">
@@ -40,12 +40,61 @@ get_header(); ?>
                             <p>世界１５０ヶ国で<br>利用できる民泊サービスです。</p><p>あなたの望む宿がきっと見つかります。</p>
                         </div>
                         <div class="travel__btn">
-                            <button class="btn filled">もっと詳しく</button>
+                            <a href="#" class="btn filled">もっと詳しく</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="house">
+            <div class="house__inner">
+                <div class="house__header">
+                    <h2 class="house__title main-title tween-animate-title">Find Your House</h2>
+                    <div class="house__sub-title sub-title tween-animate-title">お気に入りの宿泊先を見つけましょう</div>
+                </div>
+                <div class="house__items">
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-1.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 1</div>
+                    </div>
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-2.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 2</div>
+                    </div>
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-3.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 3</div>
+                    </div>
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-4.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 4</div>
+                    </div>
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-5.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 5</div>
+                    </div>
+                    <div class="house__item">
+                        <div class="cover-slide hover-darken">
+                            <div class="bg-img-zoom img-bg50" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/villa-6.jpg);"></div>
+                        </div>
+                        <div class="house__name">House 6</div>
+                    </div>
+                </div>
+                <div class="house__btn">
+                    <a href="#" class="btn slide-bg">もっと詳しく</a>
+                </div>
+            </div>
+        </section>
     </div>
 
 <?php get_footer(); ?>

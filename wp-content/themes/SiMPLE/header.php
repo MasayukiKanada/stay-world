@@ -60,7 +60,7 @@
 							<?php /* include("navigation.php"); */ ?>
 
 							<div class="navbar__btn">
-								<button class="btn filled">Contact</button>
+								<a href="#" class="btn filled">Contact</a>
 							</div>
 					</nav>
 					<button class="mobile-menu__btn">
