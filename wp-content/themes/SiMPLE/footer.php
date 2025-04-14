@@ -2,8 +2,31 @@
       <footer class="footer">
         <div class="footer__inner">
           <div class="footer__item">
-            <p class="footer__item-txt">Copyright © <?php bloginfo( 'name' ); ?> All Rights Reserved.</p>
-          </div>
+            <div class="logo">
+                <h1 class="logo__item">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <?php /* bloginfo( 'name' ); */ ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="SiMPLE" class="logo__img"><span>Stay</span><span class="purple">World</span>
+                  </a>
+                </h1>
+              </div>
+              <nav class="footer-nav">
+
+                  <?php
+                    $args = array(
+                      'theme_location' => 'footer_nav',
+                      'menu_class' => 'footer-nav__inner',
+                      'container' => false,
+                      'items_wrap' => '<ul class="footer-nav__ul">%3$s</ul>',
+                    );
+                    wp_nav_menu($args);
+                  ?>
+
+              </nav>
+            </div>
+            <div class="footer__item">
+              <p class="footer__item-txt">&copy; <?php bloginfo( 'name' ); ?></p>
+            </div>
         </div>
         
         <div id="page_top"><a href="#"></a></div>

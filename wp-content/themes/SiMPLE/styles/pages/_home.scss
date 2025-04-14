@@ -243,3 +243,59 @@
     align-items: center;
   }
 }
+
+.footer {
+  padding-bottom: 80px;
+  padding-top: 80px;
+
+  @include mq(lg) {
+    padding-top: 0;
+  }
+
+  &__inner {
+    @extend .content-width;
+    @extend .flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(md) {
+      justify-content: space-between;
+      align-items: end;
+    }
+  }
+
+  &__item {
+    @extend .mb-sm;
+  }
+
+  &-nav__ul {
+    @extend .flex;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+
+    & > li {
+      margin-right: 0;
+      margin-top: 16px;
+      margin-bottom: 16px;
+
+      @include mq(md) {
+        margin-right: 30px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      & > a {
+        color: $cSubTitle;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $cWineRed;
+        }
+      }
+    }
+  }
+}
