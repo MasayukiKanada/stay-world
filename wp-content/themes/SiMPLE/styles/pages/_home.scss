@@ -106,3 +106,35 @@
 
   }
 }
+
+.travel {
+  margin-bottom: 80px;
+
+  &__inner {
+    @extend .content-width;
+    background-color: $cBgGray;
+    padding: 15px;
+
+    @include mq(md) {
+      padding: 50px;
+    }
+  }
+
+  &__item {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__img {
+    width: 47%;
+  }
+
+  &__texts {
+    width: 47%;
+  }
+
+  &__txt {
+    margin-top: 20px;
+  }
+}
