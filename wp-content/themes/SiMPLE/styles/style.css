@@ -1220,6 +1220,71 @@ img {
           align-items: center;
 }
 
+.sidebar {
+  display: none;
+}
+@media screen and (min-width: 1280px) {
+  .sidebar {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+}
+.sidebar__left {
+  position: fixed;
+  width: 250px;
+  bottom: 300px;
+  left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.sidebar__right {
+  position: fixed;
+  bottom: 300px;
+  right: 30px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+}
+
+.icon {
+  position: relative;
+}
+.icon::before {
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+.icon.twitter::before {
+  background-image: url("../images/twitter.svg");
+}
+.icon.fb::before {
+  background-image: url("../images/facebook.svg");
+}
+.icon > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
 .footer {
   padding-bottom: 80px;
   padding-top: 80px;

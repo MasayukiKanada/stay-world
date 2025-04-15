@@ -133,5 +133,16 @@ get_header(); ?>
             </div>
         </section>
     </div>
+    <div class="sidebar">
+        <div class="sidebar__inner">
+            <div class="sidebar__left">
+                <div class="icon twitter"><a class="tween-animate-title" href="#">Twitter</a></div>
+                <div class="icon fb"><a class="tween-animate-title" href="#">Facebook</a></div>
+            </div>
+            <div class="sidebar__right">
+                <div class="copy-right tween-animate-title">&copy; <?php bloginfo( 'name' ); ?></div>
+            </div>
+        </div>
+    </div>
 
 <?php get_footer(); ?>
