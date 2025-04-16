@@ -41,8 +41,9 @@
 
 .hero {
   overflow: hidden;
-  padding-top: $navHeight;
-  
+  padding-bottom: 80px;
+  // padding-top: $navHeight;
+
   &__title {
     position: absolute;
     top: 50%;
