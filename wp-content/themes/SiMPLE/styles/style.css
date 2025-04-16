@@ -1113,6 +1113,11 @@ img {
   }
 }
 
+.swiper-slide {
+  -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
 .travel__inner {
   background-color: #eaebe6;
   padding: 15px;
@@ -1129,14 +1134,107 @@ img {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
+  position: relative;
+  z-index: 0;
 }
 .travel__img {
-  width: 47%;
+  -webkit-transition: -webkit-box-shadow 0.5s ease 1.6s;
+  transition: -webkit-box-shadow 0.5s ease 1.6s;
+  transition: box-shadow 0.5s ease 1.6s;
+  transition: box-shadow 0.5s ease 1.6s, -webkit-box-shadow 0.5s ease 1.6s;
+  width: 100%;
+}
+.travel__img.inview {
+  -webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 600px) {
+  .travel__img {
+    width: 47%;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .travel__img {
+    height: 450px;
+  }
+}
+.travel__img > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  z-index: -10;
 }
 .travel__texts {
-  width: 47%;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+@media screen and (min-width: 600px) {
+  .travel__texts {
+    width: 47%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .travel__texts::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    top: 30px;
+    left: -120px;
+    z-index: 10;
+    background-color: black;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-animation-name: travel-animetion;
+            animation-name: travel-animetion;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
 }
 
+@-webkit-keyframes travel-animetion {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  50%, 100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+}
+
+@keyframes travel-animetion {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  50%, 100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+}
 .house__item {
   width: 100%;
   margin-bottom: 16px;
@@ -1234,7 +1332,7 @@ img {
   position: fixed;
   width: 250px;
   bottom: 300px;
-  left: 30px;
+  left: -30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1245,15 +1343,25 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+.sidebar.inview .sidebar__left {
+  left: 30px;
 }
 .sidebar__right {
   position: fixed;
   bottom: 300px;
-  right: 30px;
+  right: -30px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   -webkit-transform-origin: right top;
           transform-origin: right top;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+.sidebar.inview .sidebar__right {
+  right: 30px;
 }
 
 .icon {

@@ -115,6 +115,10 @@
   }
 }
 
+.swiper-slide {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
 .travel {
   @extend .mb-lg;
 
@@ -132,16 +136,79 @@
     @extend .flex;
     justify-content: space-between;
     align-items: end;
+    position: relative;
+    z-index: 0;
   }
 
   &__img {
-    width: 47%;
+    transition: box-shadow 0.5s ease 1.6s;
+    width: 100%;
+
+    &.inview{
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    @include mq(md) {
+      width: 47%;
+      height: 300px;
+    }
+
+    @include mq(lg) {
+      height: 450px;
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: -10;
+    }
   }
 
   &__texts {
-    width: 47%;
+    width: 100%;
+
+    @include mq(md) {
+      width: 47%;
+    }
+
+    position: relative;
+    z-index: 0;
+
+    @include mq(xl) {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        top: 30px;
+        left: -120px;
+        z-index: 10;
+        background-color: $cBlack;
+        transform: scaleX(0);
+        @include animation(
+          $name:travel-animetion,
+          $duration: 0.5s,
+          $timing-function: ease,
+          $delay: 1s,
+        );
+      }
+    }
+
   }
 
+}
+
+@keyframes travel-animetion {
+  0% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50%, 100% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
 }
 
 .house {
@@ -257,19 +324,31 @@
     position: fixed;
     width: 250px;
     bottom: 300px;
-    left: 30px;
+    left: -30px;
     display: flex;
     transform: rotate(-90deg);
     transform-origin: left top;
     justify-content: space-between;
+    transition: all 1.5s ease;
+  }
+
+  &.inview .sidebar__left {
+    left: 30px;
+
   }
 
   &__right {
     position: fixed;
     bottom: 300px;
-    right: 30px;
+    right: -30px;
     transform: rotate(90deg);
     transform-origin: right top;
+    transition: all 1.5s ease;
+  }
+
+  &.inview .sidebar__right {
+    right: 30px;
+
   }
 }
 

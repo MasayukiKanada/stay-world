@@ -1,7 +1,7 @@
       
       <footer class="footer">
-        <div class="footer__inner">
-          <div class="footer__item">
+        <div class="footer__inner appear up">
+          <div class="footer__item item">
             <div class="logo">
                 <h1 class="logo__item">
                   <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -24,7 +24,7 @@
 
               </nav>
             </div>
-            <div class="footer__item">
+            <div class="footer__item item">
               <p class="footer__item-txt">&copy; <?php bloginfo( 'name' ); ?></p>
             </div>
         </div>
